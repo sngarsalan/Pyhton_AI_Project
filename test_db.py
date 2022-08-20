@@ -9,13 +9,22 @@ print(dbs)
 
 #mycursor.execute("SELECT * from info")
 
-query="INSERT INTO info (Name,Phone,Address) VALUES (%s,%s,%s)"
-val=[("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),]
+#query="INSERT INTO info (Name,Phone,Address) VALUES (%s,%s,%s)"
+
+#val=[("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),]
+
+query="SELECT address from info "
 cur=dbs.cursor()
-cur.executemany(query,val)
+
+cur.execute(query)
+
+for row in cur:
+    print(row)
+
 dbs.commit()
 
-print(cur.rowcount, "Updated")
+#print(cur.rowcount, "Updated")
+
 
 
 
