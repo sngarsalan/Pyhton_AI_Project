@@ -13,7 +13,7 @@ print(dbs)
 
 #val=[("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),("Sangi","032122909","Hyderbad"),]
 
-query="SELECT address from info "
+query="SELECT * from info "
 cur=dbs.cursor()
 
 cur.execute(query)
@@ -22,6 +22,7 @@ for row in cur:
     print(row)
 
 dbs.commit()
+
 
 #print(cur.rowcount, "Updated")
 
